@@ -1,0 +1,85 @@
+<%- include ('partials/top') %>
+
+<main class="col-lg-10" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div class="row space text-white">
+    <div class="col-12 d-flex justify-content-between align-items-center underline pb-2">
+      <h3 class="title">Borrowed Books</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text-white pl-2">
+      <form action="/books/borrowed" method="GET" class="form-inline" id="search-form">
+        <div class="form-group">
+          <input 
+          required
+          type="text" 
+          name="keyword" class="form-control" placeholder="keyword...">
+          <button type="submit" class="btn btn-primary btn-sm ml-2">Search</button>
+        </div>
+      </form>
+
+      <div class="form-check form-check-inline pb-1 pt-3">
+        <label class="form-check-label small mx-2">
+          <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+          checked
+          value="book_title"> By Title
+        </label> 
+        <label class="form-check-label small mx-2">
+          <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+          value="member_id"> By Category
+        </label>  
+        <label class="form-check-label small mx-2">
+          <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+          value="book_author"> By Author
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row space">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead class="text-white">
+          <tr>
+            <td>Book Title</td>
+            <td>Book Author</td>
+            <td>Borrower's ID</td>
+            <td>Borrower's Name</td>
+            <td>Librarian's Name</td>
+            <td>Date Borrowed</td>
+            <td>Date Due</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody class="text-white">
+          <% books.forEach( (book) => { %>
+            <tr>
+              <td><%= book.bookTitle %></td>
+              <td><%= book.bookAuthor %></td>
+              <td><%= book.memberId %></td>
+              <td><%= book.memberName %></td>
+              <td><%= book.librarianName %></td>
+              <td><%= book.dateBorrowed.toLocaleDateString() %></td>
+              <td><%= book.dateDue.toLocaleDateString() %></td>
+              <td>
+                
+                
+                <% if (book.returned) { %>
+                  <strong class="text-danger">Book has been returned</strong>
+                <% } else { %>
+                  <a href='<%= "/books/return-borrowed/" + book._id %>' class="btn btn-sm btn-warning">Return</a>
+                <% } %>
+              </td>
+            </tr>
+          <% } ) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+    </div>
+
+    </div>
+    
+<%- include ('partials/bottom') %>

@@ -1,0 +1,69 @@
+<%-include ("partials/top") %>
+<main class="col-lg-10" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div class="row space text-white">
+    <div class="col-12 d-flex justify-content-between align-items-center underline pb-2">
+      <h3 class="title">Add Book</h3>
+    </div>
+  <div class="row space text-white">
+    <div class="col-12">
+      <form action="/books/new" method="POST">
+        <fieldset class="border p-2 rounded row">
+          <legend class="p2">Book Detail</legend>
+          <div class="form-group col-6">
+            <label>Book ID (ISBN):</label> 
+            <input type="text" class="form-control" name="isbn">
+          </div>
+          <div class="form-group col-6">
+            <label>Title:</label> 
+            <input type="text" class="form-control" name="title">
+          </div>
+          <div class="form-group col-6">
+            <label>Author:</label> 
+            <input type="text" class="form-control" name="author">
+          </div>
+          <div class="form-group col-6">
+            <label>Publisher: </label> 
+            <input type="text" class="form-control" name="publisher">
+          </div>
+          <div class="form-group col-4">
+            <label>Quantity:</label> 
+            <input type="number" class="form-control" name="qty">
+          </div>
+          <div class="form-group col-4">
+            <label>Category:</label> 
+            <select class="form-control" name="category">
+              <% categories.forEach(category => { %>
+                <option label='<%= category.title.toUpperCase() %>' value='<%= category.title %>' />
+              <% }) %>
+            </select>
+           </div>
+           <div class="form-group col-4">
+            <label>Language: </label> 
+            <input type="text" class="form-control" name="language">
+           </div>
+           <div class="form-group col-3">
+            <label>Year: </label> 
+            <input type="number" class="form-control" name="year">
+          </div>
+          <div class="form-group col-3">
+            <label>Date Added: </label> 
+            <input type="date" class="form-control" name="dateAdded">
+          </div>
+          <div class="form-group col-3">
+            <label>Shelf: </label> <input type="text" class="form-control" name="shelfNo">
+          </div>
+          <div class="form-group col-3">
+            <label>Pages: </label> 
+            <input type="number" class="form-control" name="pages">
+          </div>
+        </fieldset>
+        <div class="form-group mt-2 col-6 offset-3">
+          <input value="Save" class="form-control btn btn-primary" type="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<%-include ("partials/bottom") %>

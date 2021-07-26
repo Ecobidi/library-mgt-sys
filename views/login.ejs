@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/app.css" type="text/css" />
+  <title>Library Management System</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand text-white" href="#" id="logo"></a>
+      <h4 class="text-white">
+        <span class="title">Library </span>
+        <span class="lead">Management System</span>
+      </h4>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="row space">
+      <div class="col-md-4 offset-md-4 col-sm-12 ">
+        <div class="card py-4 px-2">
+          <div class="d-flex mb-4">
+            <img src="/images/book-logo.jpg" />
+            <div>
+              <h2 class="title">Library</h2>
+              <p class="lead">Management System</p>
+            </div>
+          </div>
+          <form action="/login" method="POST" class="row">
+            <div class="form-group col-12 pb-1">
+              <input name="username" type="text" class="form-control" placeholder="username...">
+            </div>
+            <div class="form-group col-12 pb-1">
+              <input name="password" type="password" class="form-control" placeholder="password...">
+            </div>
+            <div class="form-group col-12">
+              <input type="submit" class="form-control btn btn-primary" value="Login">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

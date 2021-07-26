@@ -1,0 +1,83 @@
+<%- include ('partials/top') %>
+      <main class="col-lg-10" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="row space text-white">
+          <div class="col-12 d-flex justify-content-between align-items-center underline pb-2">
+            <h3 class="title">Books</h3>
+            <div>
+              <a href="/books/new" class="btn btn-info">Add New Book</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="text-white pl-2">
+            <form action="/books" method="GET" class="form-inline" id="search-form">
+              <div class="form-group">
+                <input 
+                required
+                type="text" 
+                name="keyword" class="form-control" placeholder="keyword...">
+                <button type="submit" class="btn btn-primary btn-sm ml-2">Search</button>
+              </div>
+            </form>
+
+            <div class="form-check form-check-inline pb-1 pt-3">
+              <label class="form-check-label small mx-2">
+                <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+                checked
+                value="book_title"> By Title
+              </label> 
+              <label class="form-check-label small mx-2">
+                <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+                value="book_category"> By Category
+              </label>  
+              <label class="form-check-label small mx-2">
+                <input form="search-form" class="form-check-input" type="radio" name="search_type" 
+                value="book_author"> By Author
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row space" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div class="col-12">
+            <table class="table table-bordered table-striped">
+              <thead class="text-white" style="background-color: rgba(100, 100, 100, 0.5);">
+                <tr>
+                  <td>S/N</td>
+                  <td>Title</td>
+                  <td>Author</td>
+                  <td>Category</td>
+                  <td><div>Quantity</div><div>Remaining</div></td>
+                  <td>Shelf</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody class="text-white">
+
+                <% books.forEach( (book, index) => { %>
+                  <tr>
+                    <td class="text-right"><%= index + 1 %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author %></td>
+                    <td><%= book.category %></td>
+                    <td class="text-right"><%= book.qty %></td>
+                    <td><%= book.shelfNo %></td>
+                    <td>
+                      <a href='<%= "/books/issue/" + book._id %>' class="btn btn-sm btn-warning">Issue</a>
+                      <a href='<%= "/books/remove/" + book._id %>' class="btn btn-sm btn-danger">Remove</a>
+                    </td>
+                  </tr>
+                <% } ) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    </div>
+    
+
+<%- include ('partials/bottom') %>

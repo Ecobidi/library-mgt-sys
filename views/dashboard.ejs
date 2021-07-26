@@ -1,0 +1,50 @@
+<%- include ('partials/top') %>
+
+      <main class="col-lg-10" style="min-height: 90vh;">
+        <div class="row space">
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+            <a href="/books" class="card bg-danger text-white d-flex p-2 align-items-center">
+              <i class="fa fa-book icon display-4" aria-hidden="true"></i>
+              <div class="d-inline-block text-center">
+                <h4 class="card-title display-4 text-right"><%= book_count %></h4>
+                <p class="card-text">Books</p>  
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+            <a href="/books/borrowed" class="card bg-success text-white d-flex p-2 align-items-center">
+              <i class="fa fa-bookmark-o icon" aria-hidden="true"></i>
+              <div class="d-inline-block text-center">
+                <h4 class="card-title display-4"><%= borrowed_count %></h4>
+                <p class="card-text">Borrowed Books</p>  
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+            <a href="/members" class="card bg-warning text-white d-flex p-2 align-items-center">
+              <i class="fa fa-users icon" aria-hidden="true"></i>
+              <div class="d-inline-block text-center">
+                <h4 class="card-title display-4"><%= member_count %></h4>
+                <p class="card-text">Members</p>  
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+            <a href="/librarians" class="card bg-info text-white d-flex p-2 align-items-center">
+              <i class="fa fa-user-circle-o icon" aria-hidden="true"></i>
+              <div class="d-inline-block text-center">
+                <h4 class="card-title display-4"><%= librarian_count %></h4>
+                <p class="card-text">Librarians</p>  
+              </div>
+            </a>
+          </div>
+        </div>     
+      </main>
+    </div>
+
+    </div>
+    
+<%- include('partials/bottom') %>

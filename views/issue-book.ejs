@@ -1,0 +1,65 @@
+<%-include ("partials/top") %>
+<main class="col-lg-10" style="background-color: rgba(0, 0, 0, 0.6);">
+  
+  <div class="row space text-white">
+    <div class="col-12 d-flex justify-content-between align-items-center underline pb-2">
+      <h3 class="title">Issue Book</h3>
+    </div>
+  </div>
+
+  <div class="row text-white">
+    <div class="col-12">
+      <form action='<%= "/books/issue/" + book._id%>' method="POST">
+        <fieldset class="border p-2 rounded row">
+          <legend>Book Details</legend>
+          <div class="form-group col-6">
+            <label>Book ID:</label> 
+            <input disabled class="form-control" value='<%= book._id %>' >
+            <input type="hidden" name="bookId" value='<%= book._id %>' >
+          </div>
+          <div class="form-group col-6">
+            <label>Book Title: </label>
+            <input disabled class="form-control" value="<%= book.title %>" >
+            <input type="hidden" name="bookTitle" value="<%= book.title %>" >
+          </div>
+          <div class="form-group col-6">
+            <label>Author: </label>
+            <input class="form-control" disabled value="<%= book.author %>">
+            <input type="hidden" name="bookAuthor" value="<%= book.author %>" >
+          </div>
+        </fieldset>
+    
+        <fieldset class="border p-2 rounded row">
+          <legend>Member Details</legend>
+          <div class="form-group col-6">
+            <label>Member ID: </label> 
+            <input name="memberId" class="form-control" type="text">
+          </div>
+          <div class="form-group col-6">
+            <label>Member Name: </label> 
+            <input type="text" name="memberName" class="form-control">
+          </div>
+        </fieldset>
+
+        <fieldset class="border p-2 rounded row">
+          <legend>Issue Book</legend>
+          <div class="form-group col-6">
+            <label>Issue Date: </label> 
+            <input type="date" name="dateBorrowed" class="form-control">
+          </div>
+          <div class="form-group col-6">
+            <label>Due Date: </label>
+            <input type="date" name="dateDue" class="form-control">
+          </div>
+        </fieldset>
+        
+        <div class="form-group col-6 offset-3 mt-2">
+          <input class="form-control btn btn-success" type="submit" value="Issue Book">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<%-include ("partials/bottom") %>

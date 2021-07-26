@@ -1,0 +1,59 @@
+body {
+  background: url('/images/bookshelves.jpg') no-repeat center center;
+  font-family: 'lato';
+  background-size: cover;
+}
+
+main {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#logo {
+  width: 96px;
+  height: 54px;
+  background: url('/images/book-logo.jpg') no-repeat right center;
+  background-size: contain;
+}
+
+img {
+  width: 100%;
+}
+
+.space {
+  padding: 2.5em 0 2.5em 0;
+}
+
+.sidenav .list-group-item {
+  cursor: pointer;
+}
+
+.user-img-circle-md {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.underline {
+  border-bottom: 2px solid #fff;
+}
+
+.table-stripped tbody tr:nth-of-type(odd) {
+  background-color:red !important;
+}
+
+.book-thumbnail {
+  width: 120px;
+  height: 180px;
+}
+
+.icon {
+  font-size: 65px;
+}
+
+.light-background {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid-item p {
+  margin-bottom: 0;
+}
